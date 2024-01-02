@@ -1,6 +1,6 @@
 ---
 date: 2024-01-01 19:02:35
-title: Kolmogorov–Smirnov Test
+title: Kolmogorov-Smirnov Test
 tags: statistics, methods
 ---
 

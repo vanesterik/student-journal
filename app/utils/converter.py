@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import markdown
+from flask import url_for
 
 md = markdown.Markdown(extensions=["codehilite", "fenced_code", "meta"])
 
@@ -18,7 +19,7 @@ class NoteConverter:
         return self.file_path.stem
 
     def _generate_href(self) -> str:
-        return f"/notes/{self.id}"
+        return url_for("pages.note", note=self.id)
 
     def _generate_content(self) -> str:
         return md.convert(self.file_content)

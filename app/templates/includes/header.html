@@ -1,8 +1,8 @@
 <header class="header">
     <nav class="stack--horizontal">
-        <a href="/" class="button button--ghost">sj_kve</a>
-        <a href="/about/" class="button button--secondary">about</a>
-        <a href="/notes/" class="button button--secondary">notes</a>
+        <a href="{{ url_for('pages.index') }}" class="button button--ghost">sj_kve</a>
+        <a href="{{ url_for('pages.about') }}" class="button button--secondary">about</a>
+        <a href="{{ url_for('pages.notes') }}" class="button button--secondary">notes</a>
         {% include 'includes/search.html' %}
     </nav>
 </header>
