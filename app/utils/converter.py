@@ -2,8 +2,24 @@ from pathlib import Path
 
 import markdown
 from flask import url_for
+from markdown.extensions.wikilinks import WikiLinkExtension
+from slugify import slugify
 
-md = markdown.Markdown(extensions=["codehilite", "fenced_code", "meta"])
+
+def my_url_builder(label, base, end):
+    note = slugify(label)
+    url = url_for("pages.note", note=note)
+    return url
+
+
+md = markdown.Markdown(
+    extensions=[
+        "codehilite",
+        "fenced_code",
+        "meta",
+        WikiLinkExtension(build_url=my_url_builder),
+    ]
+)
 
 
 class NoteConverter:
@@ -36,8 +52,6 @@ class NoteConverter:
         # Remove empty tags
         tags = [tag for tag in tags if tag]
         # Generate tag links
-        tags = [
-            {"label": label, "id": label.lower().replace(" ", "-")} for label in tags
-        ]
+        tags = [{"label": label, "id": slugify(label)} for label in tags]
 
         return date, tags, title

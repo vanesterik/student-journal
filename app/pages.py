@@ -50,7 +50,8 @@ def notes() -> str:
 @bp.route("/tags/<tag>/")
 def tag(tag: str) -> str:
     notes = generate_notes_by_tag(tag, config)
-    title = f"Tag: {tag[0].upper() + tag[1:]}"
+    title = " ".join(tag.split("-")).capitalize()
+    title = f"Tag: {title}"
     return render_template(
         "pages/note-list.html",
         notes=notes,

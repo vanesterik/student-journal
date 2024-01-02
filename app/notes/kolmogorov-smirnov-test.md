@@ -27,4 +27,4 @@ Imagine you've got some data, maybe scores from two different classes. You want 
 5. **Final Thought:**
    - The Kolmogorov–Smirnov test is handy, but it's not always the best tool for every job. Depending on your data, other tests might give you clearer answers.
 
-So, in a nutshell, the Kolmogorov–Smirnov test helps with [data analysis](/notes/data-analysis) if two sets of data are really similar or if they're quite different.
+So, in a nutshell, the Kolmogorov–Smirnov test helps with [[data analysis]] if two sets of data are really similar or if they're quite different.

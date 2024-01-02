@@ -8,12 +8,12 @@ Distributions are a way to describe the probability of an event occurring. They 
 
 We have been discussing the following distributions in class:
 
-- [Beta Distribution](/notes/beta-distribution)
-- [Bernoulli Distribution](/notes/bernoulli-distribution)
-- [Binomial Distribution](/notes/binomial-distribution)
-- [Normal Distribution](/notes/normal-distribution)
-- [Poisson Distribution](/notes/poisson-distribution)
-- [Student's t Distribution](/notes/students-t-distribution)
-- [Uniform Distribution](/notes/uniform-distribution)
+- [[Beta Distribution]]
+- [[Bernoulli Distribution]]
+- [[Binomial Distribution]]
+- [[Normal Distribution]]
+- [[Poisson Distribution]]
+- [[Students T Distribution]]
+- [[Uniform Distribution]]
 
 Each distribution in the above list has its respective characteristics and use cases. It is paramount to understand the differences between each distribution and when to use them.
