@@ -1,6 +1,20 @@
 name: Continuous Delivery
 
-on: workflow_dispatch
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   delivery:
@@ -20,12 +34,14 @@ jobs:
       - name: Build application
         run: make build
 
-      - name: Configure credentials
-        uses: aws-actions/configure-aws-credentials@v3
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Setup pages
+        uses: actions/configure-pages@v4
 
-      - name: Deploy application
-        run: aws s3 sync ./app/build s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './app/build'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
