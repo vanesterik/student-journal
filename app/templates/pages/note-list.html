@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <div class="grid">
+        {% for note in notes %}
+        <a class="grid__item button button--secondary" href="{{ url_for('pages.note', note=note.id) }}">{{ note.label
+            }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

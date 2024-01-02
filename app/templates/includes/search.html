@@ -1,0 +1,156 @@
+<dialog class="dialog">
+    <div class="dialog__container stack--vertical">
+        <header class="dialog__header">
+            <form class="search-form">
+                <label class="search-icon--big" for="search-input">
+                    {% include 'includes/search-icon.html' %}
+                </label>
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" class="search-input" id="search-input"
+                    placeholder="Search notes" spellcheck="false" type="search"></input>
+            </form>
+            <button class="button button--secondary">ESC</button>
+        </header>
+        <footer aria-hidden="true" class="dialog__footer stack--vertical"></footer>
+    </div>
+</dialog>
+<button class="button button--secondary">
+    <div class="stack--horizontal">
+        <span class="search-icon--small">{% include 'includes/search-icon.html' %}</span>
+        <span>search</span>
+    </div>
+</button>
+<script type="module">
+
+    // Define search index based on passed template notes data
+    const notes = {{ g.search_index | tojson }}
+    const idx = lunr((builder) => {
+        builder.field("title");
+        builder.field("tags");
+        notes.forEach((note) => builder.add(note))
+    });
+
+    // Query various elements from document
+    const dialog = document.querySelector(".dialog");
+    const showButton = document.querySelector(".dialog + .button");
+    const closeButton = document.querySelector(".dialog .dialog__header .button");
+
+    // Listen for keyboard shortcut: CMD + K or CTRL + K
+    window.addEventListener("keydown", (event) => {
+        if (event.metaKey && event.key === "k") dialog.showModal();
+    });
+
+    // Listen for click events on show and close buttons
+    showButton.addEventListener("click", () => {
+        dialog.showModal();
+    });
+
+    closeButton.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    // Query various elements from dialog
+    const dialogContainer = dialog.querySelector(".dialog__container");
+    const dialogFooter = dialog.querySelector(".dialog__footer");
+    const searchForm = dialog.querySelector(".search-form");
+    const searchInput = dialog.querySelector(".search-input");
+
+    // Listen for submit event on search form, reset and close
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const selected = dialogFooter.querySelector('.button[aria-selected="true"]');
+
+        if (selected === null) {
+            dialogFooter.ariaHidden = true;
+            dialogFooter.innerHTML = "";
+            dialog.close();
+            return;
+        }
+
+        const href = selected.getAttribute("href");
+        window.location.assign(href);
+    });
+
+    // Listen for input event on search input
+    searchInput.addEventListener("input", (event) => {
+        // Define search query
+        const query = event.target.value;
+
+        // Don't search if query is empty
+        if (query === "") {
+            dialogFooter.ariaHidden = true;
+            dialogFooter.innerHTML = "";
+            return;
+        }
+
+        // Define search results
+        const results = idx.search(query);
+
+        // Clear search results
+        dialogFooter.ariaHidden = true;
+        dialogFooter.innerHTML = "";
+
+        // Create links for each search result
+        const links = results.map((result, index) => {
+            const note = notes.find((document) => document.id === result.ref);
+            const link = document.createElement("a");
+            link.className = 'button button--secondary';
+            link.href = note.href;
+            link.textContent = note.title;
+
+            if (index === 0) link.ariaSelected = true;
+
+            return link;
+        });
+
+        // Append links to search results
+        links.forEach((link) => dialogFooter.appendChild(link));
+
+        // Show search results if there are any
+        if (links.length > 0) dialogFooter.ariaHidden = false;
+    });
+
+    // Listen for keydown events on search input
+    searchInput.addEventListener("keydown", (event) => {
+        const links = dialogFooter.querySelectorAll(".button");
+        const selected = dialogFooter.querySelector('.button[aria-selected="true"]');
+
+        // Don't do anything if there are no search results
+        if (links.length === 0) return;
+
+        // Select next search result on arrow down
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+
+            const next = selected.nextElementSibling;
+
+            if (next !== null) {
+                selected.ariaSelected = false;
+
+                next.ariaSelected = true;
+                next.scrollIntoView({
+                    block: "nearest",
+                    inline: "nearest",
+                });
+            }
+        }
+
+        // Select previous search result on arrow up
+        if (event.key === "ArrowUp") {
+            event.preventDefault();
+
+            const previous = selected.previousElementSibling;
+
+            if (previous !== null) {
+                selected.ariaSelected = false;
+
+                previous.ariaSelected = true;
+                previous.scrollIntoView({
+                    block: "nearest",
+                    inline: "nearest",
+                });
+            }
+        }
+    });
+
+</script>
