@@ -22,10 +22,10 @@ jobs:
     name: Build & Deploy
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup PDM
+      - name: Setup
         uses: pdm-project/setup-pdm@v3
 
       - name: Install dependencies
