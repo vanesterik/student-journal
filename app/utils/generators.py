@@ -1,10 +1,11 @@
 from pathlib import Path
+from typing import Dict, List, Tuple
 
 from app.config import Config
 from app.utils import NoteConverter
 
 
-def generate_search_index(config: Config) -> dict:
+def generate_search_index(config: Config) -> List[Dict]:
     notes_dir = Path(config.notes_dir)
     notes = []
 
@@ -28,7 +29,7 @@ def generate_search_index(config: Config) -> dict:
     return notes
 
 
-def generate_diagram(config: Config) -> tuple:
+def generate_diagram(config: Config) -> Tuple[List[Dict], List[Dict]]:
     notes_dir = Path(config.notes_dir)
     file_list = list(notes_dir.iterdir())
     edges = []
@@ -70,7 +71,7 @@ def generate_diagram(config: Config) -> tuple:
     return edges, nodes
 
 
-def generate_all_notes(config: Config) -> list:
+def generate_all_notes(config: Config) -> List[Dict]:
     notes_dir = Path(config.notes_dir)
     notes = []
 
@@ -91,7 +92,7 @@ def generate_all_notes(config: Config) -> list:
     return notes
 
 
-def generate_notes_by_tag(tag: str, config: Config) -> list:
+def generate_notes_by_tag(tag: str, config: Config) -> List[Dict]:
     notes = generate_all_notes(config)
     notes = [
         note

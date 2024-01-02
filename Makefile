@@ -10,13 +10,13 @@ help:
 	@echo "       lint all python code"
 	@echo "make run"
 	@echo "       run dev server"
+	@echo "make serve"
+	@echo "       run build server"
+	@echo "make test"
+	@echo "       test all python code"
 
 build:
 	pdm run python build.py
-
-clean:
-	@echo "cleaning all files in output except .gitkeep"
-	find output -type f ! -name '.gitkeep' -delete
 
 format:
 	pdm run black app tests
@@ -32,3 +32,10 @@ run:
 serve:
 	make build
 	pdm run python -m http.server --directory app/build
+
+serve:
+	make build
+	pdm run python -m http.server --directory app/build
+
+test:
+	pdm run pytest tests

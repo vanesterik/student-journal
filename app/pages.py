@@ -70,12 +70,9 @@ def note(note: str) -> str:
     )
 
 
-@bp.errorhandler(404)
-def page_not_found(e: Exception) -> str:
-    return (
-        render_template(
-            "not-found.html",
-            title="Page Not Found",
-        ),
-        404,
+@bp.route("/page-not-found/")
+def page_not_found() -> str:
+    return render_template(
+        "pages/page-not-found.html",
+        title="Page Not Found",
     )

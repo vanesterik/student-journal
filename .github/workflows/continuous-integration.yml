@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    name: Lint, Typecheck, Test & Build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM
+        uses: pdm-project/setup-pdm@v3
+
+      - name: Install dependencies
+        run: pdm install --no-lock
+
+      - name: Run linters
+        run: make lint
+
+      - name: Run unit tests
+        run: make test
+
+      - name: Build application
+        run: make build

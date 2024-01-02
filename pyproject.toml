@@ -1,7 +1,7 @@
 [project]
-name = ""
-version = ""
-description = ""
+name = "sj_kve"
+version = "1.0.0"
+description = "Collection of my work and learnings throughout my Master's in Applied Data Science from 2023 to 2025."
 authors = [
     { name = "Koen van Esterik", email = "kd.vanesterik@student.han.nl" },
 ]
@@ -9,7 +9,6 @@ dependencies = [
     "flask>=3.0.0",
     "markdown>=3.5.1",
     "pygments>=2.17.2",
-    "pydantic>=2.5.3",
     "frozen-flask>=1.0.1",
 ]
 requires-python = ">=3.11"
@@ -17,4 +16,11 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pdm.dev-dependencies]
-dev = ["mypy>=1.8.0", "black>=23.12.0", "isort>=5.13.2", "ruff>=0.1.9"]
+dev = [
+    "mypy>=1.8.0",
+    "black>=23.12.0",
+    "isort>=5.13.2",
+    "ruff>=0.1.9",
+    "pytest>=7.4.4",
+    "types-Markdown>=3.5.0.3",
+]

@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from markdown import Markdown
+import markdown
 
-markdown = Markdown(extensions=["codehilite", "fenced_code", "meta"])
+md = markdown.Markdown(extensions=["codehilite", "fenced_code", "meta"])
 
 
 class NoteConverter:
@@ -21,11 +21,11 @@ class NoteConverter:
         return f"/notes/{self.id}"
 
     def _generate_content(self) -> str:
-        return markdown.convert(self.file_content)
+        return md.convert(self.file_content)
 
     def _generate_metadata(self) -> tuple:
-        markdown.convert(self.file_content)
-        meta = markdown.Meta
+        md.convert(self.file_content)
+        meta = md.Meta  # type: ignore
 
         date = meta.get("date", [None])[0]
         title = meta.get("title", [None])[0]
