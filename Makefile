@@ -11,7 +11,7 @@ help:
 	@echo "make run"
 	@echo "       run dev server"
 	@echo "make serve"
-	@echo "       run build server"
+	@echo "       run build and serve static"
 	@echo "make test"
 	@echo "       test all python code"
 
@@ -28,10 +28,6 @@ lint:
 
 run:
 	pdm run python run.py
-
-serve:
-	make build
-	pdm run python -m http.server --directory app/build
 
 serve:
 	make build
