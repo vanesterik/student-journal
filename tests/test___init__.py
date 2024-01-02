@@ -9,7 +9,6 @@ class TestCreateApp(unittest.TestCase):
     def test_create_app(self):
         app = create_app()
         self.assertIsInstance(app, Flask)
-        # Add more assertions as needed
 
 
 if __name__ == "__main__":

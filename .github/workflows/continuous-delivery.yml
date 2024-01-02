@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup PNPM
+      - name: Setup PDM
         uses: pdm-project/setup-pdm@v3
 
       - name: Install dependencies
@@ -28,4 +28,4 @@ jobs:
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Deploy application
-        run: aws s3 sync ./apps/build s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+        run: aws s3 sync ./app/build s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
