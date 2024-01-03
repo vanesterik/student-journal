@@ -9,7 +9,7 @@ def generate_search_index(config: Config) -> List[Dict]:
     notes_dir = Path(config.notes_dir)
     notes = []
 
-    for file_path in notes_dir.iterdir():
+    for file_path in notes_dir.glob("*.md"):
         with open(file_path, "r") as file:
             file_content = file.read()
             note = NoteConverter(file_path, file_content)
@@ -31,7 +31,7 @@ def generate_search_index(config: Config) -> List[Dict]:
 
 def generate_diagram(config: Config) -> Tuple[List[Dict], List[Dict]]:
     notes_dir = Path(config.notes_dir)
-    file_list = list(notes_dir.iterdir())
+    file_list = list(notes_dir.glob("*.md"))
     edges = []
     nodes = []
 
@@ -75,7 +75,7 @@ def generate_all_notes(config: Config) -> List[Dict]:
     notes_dir = Path(config.notes_dir)
     notes = []
 
-    for file_path in notes_dir.iterdir():
+    for file_path in notes_dir.glob("*.md"):
         with open(file_path, "r") as file:
             file_content = file.read()
             note = NoteConverter(file_path, file_content)

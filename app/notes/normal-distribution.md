@@ -20,6 +20,15 @@ plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *
 plt.show()
 ```
 
+![Normal Distribution](/images/normal-distribution.png)
+
 The normal distribution is the most important probability distribution in statistics because it fits many natural phenomena. For example, heights, blood pressure, measurement error, and IQ scores follow the normal distribution. It is also known as the Gaussian distribution and the bell curve.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rzFX5NWojp0?si=hCYUVOxJd7uiQPaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+The mean and standard deviation are required to create a normal distribution curve. The standard deviation is the measure of how spread out numbers are and is calculated as the square root of the variance. The variance is calculated as the average of the squared differences from the mean.
+
+Another distribution which features a bell-shaped curve is the [[Students t-distribution]], but has larger tails than the normal distribution. The t-distribution is used when the sample size is small, and the population standard deviation is unknown.
+
+## References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
+- [StatQuest](https://www.youtube.com/watch?v=rzFX5NWojp0)

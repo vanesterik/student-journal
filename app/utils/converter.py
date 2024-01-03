@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import markdown
@@ -6,7 +7,7 @@ from markdown.extensions.wikilinks import WikiLinkExtension
 from slugify import slugify
 
 
-def my_url_builder(label, base, end):
+def note_url_builder(label, base, end):
     note = slugify(label)
     url = url_for("pages.note", note=note)
     return url
@@ -17,7 +18,7 @@ md = markdown.Markdown(
         "codehilite",
         "fenced_code",
         "meta",
-        WikiLinkExtension(build_url=my_url_builder),
+        WikiLinkExtension(build_url=note_url_builder),
     ]
 )
 
@@ -38,7 +39,13 @@ class NoteConverter:
         return url_for("pages.note", note=self.id)
 
     def _generate_content(self) -> str:
-        return md.convert(self.file_content)
+        content = md.convert(self.file_content)
+        content = re.sub(
+            r'src="(/[^"]*)"',
+            lambda match: f'src="{url_for("static", filename=match.group(1))}"',
+            content,
+        )
+        return content
 
     def _generate_metadata(self) -> tuple:
         md.convert(self.file_content)
