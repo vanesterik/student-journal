@@ -17,3 +17,8 @@ We have been discussing the following distributions in class:
 - [[Uniform Distribution]]
 
 Each distribution in the above list has its respective characteristics and use cases. It is paramount to understand the differences between each distribution and when to use them.
+
+## References
+
+- https://en.wikipedia.org/wiki/Probability_distribution
+- https://www.youtube.com/watch?v=oI3hZJqXJuc

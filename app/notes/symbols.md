@@ -1,7 +1,7 @@
 ---
 date: 2024-01-05 12:55:38
-title: Math Symbols
-tags: Statistics, Math
+title: Symbols
+tags: math
 ---
 
 This is a cheatsheet of math symbols. This to keep track of all symbols discussed during statistics classes. The list is in no means complete, but reflects the symbols used in data science and machine learning.

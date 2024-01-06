@@ -6,6 +6,25 @@ tags: statistics, probability
 
 A normal distribution is a distribution that is symmetric around the mean, showing that data near the mean are more frequent in occurrence than data far from the mean. In graph form, normal distribution will appear as a bell curve.
 
+The probability density function of the normal distribution is given by:
+
+$$
+f(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+where $\mu$ is the mean and $\sigma^2$ is the variance.
+
+The mean and variance of the normal distribution are given by:
+
+$$
+\begin{align}
+\mu &= \mu \\
+\sigma^2 &= \sigma^2
+\end{align}
+$$
+
+An example of a normal distribution in Python:
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt

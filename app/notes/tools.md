@@ -5,3 +5,4 @@ tags: statistics, tools
 ---
 
 - [[Kolmogorov-Smirnov Test]]
+- [[Monte Carlo Method]]
