@@ -12,7 +12,7 @@ $$
 f(x) = \frac{x^{\alpha - 1}(1 - x)^{\beta - 1}}{B(\alpha, \beta)}
 $$
 
-where $B(\alpha, \beta)$ is the [[Beta function]].
+where $B(\alpha, \beta)$ is the Beta function.
 
 The mean and variance of the Beta distribution are given by:
 
