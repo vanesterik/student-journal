@@ -1,6 +1,8 @@
 from pathlib import Path
 from typing import Dict, List, Tuple
 
+from flask import url_for
+
 from app.config import Config
 from app.utils import NoteConverter
 
@@ -52,21 +54,15 @@ def generate_diagram(config: Config) -> Tuple[List[Dict], List[Dict]]:
             # Find other notes that are linked in current note
             for file_path in file_list:
                 other_note_id = file_path.stem
-                if other_note_id in note.content:
+                other_note_href = url_for("pages.note", note=other_note_id)
+
+                if other_note_href in note.content:
                     edges.append(
                         {
                             "source": note.id,
                             "target": other_note_id,
                         }
                     )
-
-    # Make sure there are no bi-directional duplicates in edges list
-    edges = [
-        edge
-        for edge in edges
-        if edge["source"] != edge["target"]
-        and {"source": edge["target"], "target": edge["source"]} not in edges
-    ]
 
     return edges, nodes
 

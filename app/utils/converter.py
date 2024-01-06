@@ -17,7 +17,10 @@ md = markdown.Markdown(
     extensions=[
         "codehilite",
         "fenced_code",
+        "mdx_linkify",
         "meta",
+        "sane_lists",
+        "tables",
         WikiLinkExtension(build_url=note_url_builder),
     ]
 )

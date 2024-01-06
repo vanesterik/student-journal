@@ -26,9 +26,9 @@ The normal distribution is the most important probability distribution in statis
 
 The mean and standard deviation are required to create a normal distribution curve. The standard deviation is the measure of how spread out numbers are and is calculated as the square root of the variance. The variance is calculated as the average of the squared differences from the mean.
 
-Another distribution which features a bell-shaped curve is the [[Students t-distribution]], but has larger tails than the normal distribution. The t-distribution is used when the sample size is small, and the population standard deviation is unknown.
+Another distribution which features a bell-shaped curve is the Students t-distribution, but has larger tails than the normal distribution. The t-distribution is used when the sample size is small, and the population standard deviation is unknown.
 
 ## References
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
-- [StatQuest](https://www.youtube.com/watch?v=rzFX5NWojp0)
+- https://en.wikipedia.org/wiki/Normal_distribution
+- https://www.youtube.com/watch?v=rzFX5NWojp0

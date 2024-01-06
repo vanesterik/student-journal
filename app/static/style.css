@@ -266,6 +266,7 @@ pre {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.65rem;
+    overflow-x: auto;
 }
 
 img {
@@ -332,6 +333,42 @@ ol ul,
 ol ol {
     margin-top: var(--space-3);
     margin-bottom: var(--space-3);
+}
+
+table {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
+    padding-left: 1.625rem;
+}
+
+thead th {
+    padding-right: 0.575rem;
+    padding-left: 0.575rem;
+    text-align: left;
+}
+
+thead th:first-child {
+    padding-left: 0;
+}
+
+thead th:last-child {
+    padding-right: 0;
+}
+
+tbody td,
+tfoot td {
+    padding-right: 0.575rem;
+    padding-left: 0.575rem;
+}
+
+tbody td:first-child,
+tfoot td:first-child {
+    padding-left: 0;
+}
+
+tbody td:last-child,
+tfoot td:last-child {
+    padding-right: 0;
 }
 
 time {
@@ -858,6 +895,7 @@ time {
 
 .search-input {
     appearance: none;
+    background: none;
     border: none;
     flex: auto;
     height: var(--space-14);
