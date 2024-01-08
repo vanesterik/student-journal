@@ -116,6 +116,14 @@
     --radius-6: 0.75rem;
     --radius-7: 0.875rem;
     --radius-8: 1rem;
+
+    /*
+        5. Z-index
+        ----------
+        This section defines the z-index used in the application.
+    */
+    --z-index-content: 10;
+    --z-index-layout: 20;
 }
 
 /*
@@ -819,30 +827,24 @@ time {
 }
 
 .footer {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 400;
     padding-bottom: var(--space-3);
     padding-top: var(--space-12);
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
+    position: relative;
     row-gap: var(--space-8);
-}
-
-.grid {
-    display: grid;
-    grid-gap: var(--space-1);
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid__item {
-    height: var(--space-40);
+    text-transform: uppercase;
+    z-index: var(--z-index-layout);
 }
 
 .header {
     padding-bottom: var(--space-12);
     padding-top: var(--space-3);
+    position: relative;
+    z-index: var(--z-index-layout);
 }
 
 .layout {
@@ -884,6 +886,14 @@ time {
 
 .main {
     flex: 1 1 auto;
+}
+
+.pointer-events--auto {
+    pointer-events: auto;
+}
+
+.pointer-events--none {
+    pointer-events: none;
 }
 
 .search-form {

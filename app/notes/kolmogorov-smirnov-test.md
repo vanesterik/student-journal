@@ -1,7 +1,7 @@
 ---
 date: 2024-01-01 19:02:35
 title: Kolmogorov-Smirnov Test
-tags: statistics, tools
+tags: statistics, methods
 ---
 
 The Kolmogorov-Smirnov (K-S) test is used to compare two datasets (or a dataset to a known distribution) to see if they come from the same underlying probability distribution.

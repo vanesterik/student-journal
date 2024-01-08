@@ -9,19 +9,10 @@ The Binomial distribution is a discrete probability distribution with two parame
 The probability mass function of the Binomial distribution is given by:
 
 $$
-f(k, n, p) = \Pr(k; n, p) = \Pr(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}
+\Pr(x|n,p) = \binom{n!}{x!(n-x)!}p^x(1-p)^{n-x}
 $$
 
-where $k$ is the number of successes, $n$ is the number of trials, and $p$ is the probability of success.
-
-The mean and variance of the Binomial distribution are given by:
-
-$$
-\begin{align}
-\mu &= np \\
-\sigma^2 &= np(1 - p)
-\end{align}
-$$
+where $x$ is the number of successes, $n$ is the number of trials, and $p$ is the probability of success.
 
 An example of a Binomial distribution in Python:
 

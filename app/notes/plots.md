@@ -11,6 +11,7 @@ Plots are a great way to visualize data. Below a collection of plots that were d
 - [[Heatmap]]
 - [[Histogram]]
 - [[Lineplot]]
+- [[QQ Plot]]
 - [[Scatterplot]]
 - [[Violinplot]]
 

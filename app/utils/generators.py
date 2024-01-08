@@ -85,6 +85,9 @@ def generate_all_notes(config: Config) -> List[Dict]:
                 }
             )
 
+    # Sort notes by title
+    notes.sort(key=lambda note: note["label"])
+
     return notes
 
 

@@ -2,11 +2,15 @@
 
 {% block content %}
 <div class="container">
+    {% if title %}
     <h1>{{ title }}</h1>
-    <div class="grid">
+    {% endif %}
+    {% if description %}
+    <p>{{ description }}</p>
+    {% endif %}
+    <div class="stack--horizontal">
         {% for note in notes %}
-        <a class="grid__item button button--secondary" href="{{ url_for('pages.note', note=note.id) }}">{{ note.label
-            }}</a>
+        <a class="button button--secondary" href="{{ url_for('pages.note', note=note.id) }}">{{ note.label }}</a>
         {% endfor %}
     </div>
 </div>
