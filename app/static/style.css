@@ -219,9 +219,10 @@ a:focus {
 }
 
 blockquote {
-    margin-top: 1.6rem;
-    margin-bottom: 1.6rem;
+    border-left: 0.25rem solid var(--primary-200);
+    margin: 1.6rem 0;
     padding-left: var(--space-4);
+    font-style: italic;
 }
 
 h1,
@@ -248,7 +249,7 @@ h2 {
 h3 {
     font-size: 1.25rem;
     margin-top: 1.6rem;
-    margin-bottom: 9.6rem;
+    margin-bottom: 0.6rem;
     line-height: 1.6;
 }
 

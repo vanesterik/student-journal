@@ -6,7 +6,7 @@ tags: statictics, concepts
 
 A Null Hypothesis is a statement that there is no relationship between two variables. It is the default position that there is no relationship between two variables. The alternative hypothesis is the opposite of the null hypothesis. It is usually the hypothesis you set out to investigate. The alternative hypothesis is what you hope to prove in your study/experiment.
 
-## Example
+### Example
 
 Let's say you are interested in the relationship between the amount of coffee a person drinks and their productivity at work. You could set up a null hypothesis like this:
 
