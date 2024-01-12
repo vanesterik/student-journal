@@ -4,7 +4,7 @@ title: F-statistic
 tags: statistics, concepts
 ---
 
-The F-statistic in the context of linear regression is a measure of how well the model fits the data. It is calculated as the ratio of the explained variance to the unexplained variance. The explained variance is the variance of the dependent variable that is explained by the model. The unexplained variance is the variance of the dependent variable that is not explained by the model. The F-statistic is calculated as:
+An F-test is a statistical method to compare the variability in two or more sets of data. It looks at whether the differences in variability are meaningful or just due to random chance. The test uses a specific statistical measure called the F-statistic to make this determination. This is often applied when we want to see which statistical model is the most accurate in representing a population based on a given set of data. The F-test is particularly useful when models are created using the least squares method. The F-statistic is calculated as:
 
 $$
 F = \frac{\text{explained variance}}{\text{unexplained variance}}
@@ -13,5 +13,4 @@ $$
 ## References
 
 - https://en.wikipedia.org/wiki/F-test
-- https://www.youtube.com/watch?v=zITIFTsivN8
 

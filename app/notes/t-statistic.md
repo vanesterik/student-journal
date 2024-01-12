@@ -4,15 +4,10 @@ title: T-statistic
 tags: statictics, concepts
 ---
 
-The t-statistic is a measure of how well the model fits the data. It is calculated as the ratio of the estimated coefficient to the standard error of the estimated coefficient. The estimated coefficient is the coefficient that is estimated by the model. The standard error of the estimated coefficient is the standard deviation of the estimated coefficient. The t-statistic is calculated as:
+In statistics, the t-statistic is a measure that helps us decide if the difference between an estimated value and its expected value is meaningful or just due to chance. We use it in a method called the t-test, which helps us make decisions about whether a particular idea ([[null hypothesis]]) is likely or not. 
 
-$$
-t = \frac{\text{estimated coefficient}}{\text{standard error of the estimated coefficient}}
-$$
-
-The t-statistic is related to the [[F-statistic]] and the [[P-Value]] and is rooted in the [[Students t distribution]].
+Think of it like a tool that tells us if what we're seeing is a real effect or just a random variation. It's a bit like a z-score, but we use the t-statistic when we have a small amount of data or we don't know much about the entire group we're studying. This comes in handy, for instance, when we're trying to figure out the average of a whole group based on a small sample. The t-statistic helps us make sense of the results and understand the likelihood of what we're observing being a true pattern rather than just a fluke.
 
 ## References
 
 - https://en.wikipedia.org/wiki/T-statistic
-- https://www.youtube.com/watch?v=zITIFTsivN8
