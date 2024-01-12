@@ -345,39 +345,30 @@ ol ol {
 }
 
 table {
-    margin-top: var(--space-5);
-    margin-bottom: var(--space-5);
-    padding-left: 1.625rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+    width: max-content;
 }
 
-thead th {
-    padding-right: 0.575rem;
-    padding-left: 0.575rem;
-    text-align: left;
+table tr {
+    border-top: 1px solid var(--primary-200);
 }
 
-thead th:first-child {
-    padding-left: 0;
+table tr:nth-child(2n) {
+    background-color: var(--primary-50);
 }
 
-thead th:last-child {
-    padding-right: 0;
+table th {
+    font-weight: 600;
 }
 
-tbody td,
-tfoot td {
-    padding-right: 0.575rem;
-    padding-left: 0.575rem;
-}
-
-tbody td:first-child,
-tfoot td:first-child {
-    padding-left: 0;
-}
-
-tbody td:last-child,
-tfoot td:last-child {
-    padding-right: 0;
+table th,
+table td {
+    border: 1px solid var(--primary-200);
+    padding: var(--space-1) var(--space-2);
 }
 
 time {

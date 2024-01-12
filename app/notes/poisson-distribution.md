@@ -30,9 +30,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import poisson
 
-mu = 2.6 # Parameter of the poisson distribution (lambda)
+plt.figure(figsize=(9, 5))
+
+mu = 12.1 # Parameter of the poisson distribution (lambda)
 x = np.arange(poisson.ppf(0.01, mu), poisson.ppf(0.99, mu))
-plt.scatter(x, poisson.pmf(x, mu), color="r")
+
+plt.bar(x, poisson.pmf(x, mu), width=0.1)
 plt.show()
 ```
 
