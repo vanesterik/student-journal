@@ -8,6 +8,8 @@ A model is a mathematical representation of a system. It is used to make predict
 
 These are the models that we have discussed during class:
 
+- [[DBSCAN]]
+- [[Gaussian Mixture Model]]
 - [[Linear Regression]]
 
 ## References

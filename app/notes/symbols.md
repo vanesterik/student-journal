@@ -9,23 +9,24 @@ This is a cheatsheet of math symbols. This to keep track of all symbols discusse
 | Symbol    | Description                        |
 | --------- | ---------------------------------- |
 | $\alpha$  | Alpha coefficient                  |
-| $\bar{x}$ | Mean of variable $x$               |
 | $\beta$   | Beta coefficient                   |
-| $\hat{x}$ | Estimated value of $x$             |
+| $\theta$  | Theta coefficient                  |
 | $\in$     | Is an element of                   |
+| $\subset$ | Is a subset of                     |
+| $\rho$    | Correlation                        |
+| $d$       | Differential                       |
 | $\int$    | Integral                           |
 | $\mu$     | Mean                               |
 | $\prod$   | Product                            |
-| $\rho$    | Correlation                        |
 | $\sigma$  | Standard deviation                 |
-| $\subset$ | Is a subset of                     |
 | $\sum$    | Sum                                |
-| $d$       | Differential                       |
 | $p_A$     | Probability of event $A$           |
 | $p$       | Probability                        |
 | $s$       | Sample standard deviation          |
-| $x_i$     | Value of variable $x$ at index $i$ |
-| $X$       | Stochastic variable                |
 | $x$       | Variable (fixed value)             |
+| $X$       | Stochastic variable                |
+| $x_i$     | Value of variable $x$ at index $i$ |
+| $\bar{x}$ | Mean of variable $x$               |
+| $\hat{x}$ | Estimated value of $x$             |
 
 Over time the list will be expanded and perhaps ordererd in a more logical way.
